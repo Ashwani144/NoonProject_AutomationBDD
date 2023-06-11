@@ -1,6 +1,6 @@
 Feature: Add to Cart feature
 
-
+@smoke
 Scenario: Without Login with to add to cart flow 
 Given user is on home page
 When user click to clerance room option

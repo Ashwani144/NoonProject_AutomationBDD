@@ -1,6 +1,6 @@
 Feature: SignIn page feature
 
-
+@smoke
 Scenario: Login with correct credentails 
 Given user is on login page
 When user enters email "ashwanipandeycert@gmail.com"

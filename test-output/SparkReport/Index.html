@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Grasshopper Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jun 6, 2023 02:24:53 PM</span></a>
+<a href="#"><span class="badge badge-primary">Jun 10, 2023 11:04:05 PM</span></a>
 </li>
 </ul>
 </div>
@@ -52,6 +52,16 @@
 <span class="ico"><i class="fa fa-list"></i></span>
 </a>
 </li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
 </ul>
 </div>
 </div>      <div class="vcontainer">
@@ -61,25 +71,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jun 6, 2023 02:24:53 PM</h3>
+<h3>Jun 10, 2023 11:04:05 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jun 6, 2023 02:25:06 PM</h3>
+<h3>Jun 10, 2023 11:08:12 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>1</h3>
+<h3>3</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Features Failed</p>
-<h3>0</h3>
+<h3>2</h3>
 </div></div>
 </div>
 </div>
@@ -95,12 +105,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> features passed
+<div><small data-tooltip='60%'>
+<b>3</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> features failed,
+<small data-tooltip='40%'><b>2</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -118,9 +128,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
+<div><small data-tooltip='66%'><b>4</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> scenarios failed,
+<small data-tooltip='33%'><b>2</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -138,10 +148,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>6</b> steps passed</small></div>
+<div><small data-tooltip='76%'><b>26</b> steps passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> steps failed,
-<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='5%'><b>2</b> steps failed,
+<b>6</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -157,10 +167,27 @@
 </div></div>
 <script>
 var timeline = {
-"SignIn page feature":12.33
+"Add to Cart feature":79.227,"SignIn page feature":21.49,"Dashboard Page Feature":56.18,"Recommended Page Feature":33.635,"Search page feature":53.801
 };
 </script>
 <div class="row">
+<div class="col-md-4 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@smoke</td>
+<td>4</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>66.667%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
 <div class="col-md-4 sysenv-container">
 <div class="card">
 <div class="card-header"><p>System/Environment</p></div>
@@ -192,21 +219,21 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
-failParent: 0,
+passParent: 3,
+failParent: 2,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 1,
-failChild: 0,
+passChild: 4,
+failChild: 2,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 6,
-failGrandChild: 0,
+passGrandChild: 26,
+failGrandChild: 2,
 warningGrandChild: 0,
-skipGrandChild: 0,
+skipGrandChild: 6,
 infoGrandChild: 0,
 eventsCount: 5,
 };
@@ -221,32 +248,39 @@ eventsCount: 5,
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@smoke</a>
 </ul>
 </li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">SignIn page feature</p>
+            <p class="name">Add to Cart feature</p>
             <p class="text-sm">
-              <span>14:24:54 PM</span> / <span>00:00:12:330</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>23:04:07 PM</span> / <span>00:01:19:227</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">SignIn page feature</h5>
-<span class='badge badge-success'>06.06.2023 14:24:54</span>
-<span class='badge badge-danger'>06.06.2023 14:25:06</span>
-<span class='badge badge-default'>00:00:12:330</span>
+<h5 class="test-status text-fail">Add to Cart feature</h5>
+<span class='badge badge-success'>06.10.2023 23:04:07</span>
+<span class='badge badge-danger'>06.10.2023 23:05:26</span>
+<span class='badge badge-default'>00:01:19:227</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
 <div class="m-t-10 m-l-5"></div>
@@ -256,7 +290,170 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Login with correct credentails</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Without Login with to add to cart flow</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.AddToCartSteps.user_is_on_home_page()">
+                <span>Given user is on home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepdefinitions.AddToCartSteps.user_click_to_clerance_room_option()">
+                <span>When user click to clerance room option</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//img[@src='https://f.nooncdn.com/mpcms/EN0001/assets/13942ed4-e2d6-4779-bb32-0fbfe3c56866.png']"}
+  (Session info: chrome=114.0.5735.110)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.2', revision: '826dbfc730'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_333'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a3c390f5a478f5a23fad4bc2f38ca455, findElement {using=xpath, value=//img[@src='https://f.nooncdn.com/mpcms/EN0001/assets/13942ed4-e2d6-4779-bb32-0fbfe3c56866.png']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\HP\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:54916}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54916/devtoo..., se:cdpVersion: 114.0.5735.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a3c390f5a478f5a23fad4bc2f38ca455
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at pageobjects.AddToCart.clickOnclearance(AddToCart.java:35)
+	at stepdefinitions.AddToCartSteps.user_click_to_clerance_room_option(AddToCartSteps.java:26)
+	at ✽.user click to clerance room option(file:///C:/Users/HP/workspace/BDD_WorkShop_Framwork_Noon/./src/test/resources/features/AddtoCart.feature:6)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.AddToCartSteps.user_click_to_man_fashion()">
+                <span>And user click to Man fashion</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.AddToCartSteps.user_click_to_hoodies()">
+                <span>And user click to Hoodies</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.AddToCartSteps.user_click_to_tommy_sport()">
+                <span>And user click to Tommy sport</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.AddToCartSteps.user_click_to_add_to_cart()">
+                <span>And user click to Add to Cart</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.AddToCartSteps.user_click_to_checkout()">
+                <span>Then user click to checkout</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>AppHooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
+      <div>Without Login with to add to cart flow
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../embedded1.png' src="../embedded1.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="13"><span class="badge log pass-bg mr-2">Pass</span>Without Login with to add to cart flow</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.AddToCartSteps.user_is_on_home_page()">
+                <span>Given user is on home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.AddtoCart_IPhoneSteps.user_click_to_mobiles()">
+                <span>When user click to mobiles</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.AddtoCart_IPhoneSteps.user_click_to_i_phone()">
+                <span>And user click to iPhone</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.AddtoCart_IPhoneSteps.user_click_to_i_phone14pro_max()">
+                <span>And user click to iPhone14ProMax</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.AddtoCart_IPhoneSteps.user_click_to_applei_phone14pro_max()">
+                <span>And user click to AppleiPhone14ProMax</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.AddToCartSteps.user_click_to_add_to_cart()">
+                <span>And user click to Add to Cart</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.AddToCartSteps.user_click_to_checkout()">
+                <span>Then user click to checkout</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="24"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SignIn page feature</p>
+            <p class="text-sm">
+              <span>23:05:27 PM</span> / <span>00:00:21:490</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">SignIn page feature</h5>
+<span class='badge badge-success'>06.10.2023 23:05:27</span>
+<span class='badge badge-danger'>06.10.2023 23:05:48</span>
+<span class='badge badge-default'>00:00:21:490</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=24</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="25"><span class="badge log pass-bg mr-2">Pass</span>Login with correct credentails</div>
       </div>
     </div>
         <div class="collapse">
@@ -297,6 +494,228 @@ eventsCount: 5,
 </div>
           </div>
         </li>
+        <li class="test-item"  status="pass" test-id="35"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Dashboard Page Feature</p>
+            <p class="text-sm">
+              <span>23:05:48 PM</span> / <span>00:00:56:180</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Dashboard Page Feature</h5>
+<span class='badge badge-success'>06.10.2023 23:05:48</span>
+<span class='badge badge-danger'>06.10.2023 23:06:44</span>
+<span class='badge badge-default'>00:00:56:180</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=35</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="36"><span class="badge log pass-bg mr-2">Pass</span>Order page functionlity test when there is no order</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.OrderPageSteps.user_has_already_logged_in_to_application(io.cucumber.datatable.DataTable)">
+                <span>Given user has already logged in to application</span>
+      <div><table class='markup-table table '><tr><td>email</td><td>password</td></tr><tr><td>ashwanipandeycert@gmail.com</td><td>Noon@2121</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OrderPageSteps.user_is_on_home_page()">
+                <span>Given user is on Home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OrderPageSteps.user_click_to_my_account_option()">
+                <span>When user click to MyAccount option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OrderPageSteps.user_click_to_order_option()">
+                <span>When user click to order option</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OrderPageSteps.order_page_should_be(java.lang.String)">
+                <span>Then order page should  be "You have no previous orders"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="45"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Recommended Page Feature</p>
+            <p class="text-sm">
+              <span>23:06:44 PM</span> / <span>00:00:33:635</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Recommended Page Feature</h5>
+<span class='badge badge-success'>06.10.2023 23:06:44</span>
+<span class='badge badge-danger'>06.10.2023 23:07:18</span>
+<span class='badge badge-default'>00:00:33:635</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=45</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="46"><span class="badge log pass-bg mr-2">Pass</span>To show the Recommended product</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.AddToCartSteps.user_is_on_home_page()">
+                <span>Given user is on home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.RecommendedPageSteps.user_click_to_the_recommended_page()">
+                <span>When user click to the recommended page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.RecommendedPageSteps.recommended_product_should_be_display()">
+                <span>Then recommended product should be display</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="53"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Search page feature</p>
+            <p class="text-sm">
+              <span>23:07:18 PM</span> / <span>00:00:53:801</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Search page feature</h5>
+<span class='badge badge-success'>06.10.2023 23:07:18</span>
+<span class='badge badge-danger'>06.10.2023 23:08:12</span>
+<span class='badge badge-default'>00:00:53:801</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=53</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="54"><span class="badge log fail-bg mr-2">Fail</span>search the product</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.SearchProductSteps.user_is_on_search_home_page()">
+                <span>Given user is on search home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.SearchProductSteps.user_type_the_in_search_box(java.lang.String)">
+                <span>When user type the "Electronic" in search box</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepdefinitions.SearchProductSteps.user_click_to_3rd_option()">
+                <span>And user click to 3rd option</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='electric scooter']"}
+  (Session info: chrome=114.0.5735.110)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.2', revision: '826dbfc730'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_333'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e4a2c4b9037eb7d9ba970966a8c96065, findElement {using=xpath, value=//div[text()='electric scooter']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\HP\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:55545}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55545/devtoo..., se:cdpVersion: 114.0.5735.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e4a2c4b9037eb7d9ba970966a8c96065
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at pageobjects.SearchProductPage.clickOnsearch1stItem(SearchProductPage.java:44)
+	at stepdefinitions.SearchProductSteps.user_click_to_3rd_option(SearchProductSteps.java:28)
+	at ✽.user click to 3rd option(file:///C:/Users/HP/workspace/BDD_WorkShop_Framwork_Noon/./src/test/resources/features/SearchProduct.feature:7)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.SearchProductSteps.electric_scooter_is_display()">
+                <span>Then electric scooter is display</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>AppHooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
+      <div>search the product
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../embedded2.png' src="../embedded2.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
@@ -306,7 +725,173 @@ eventsCount: 5,
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-        </div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>4</span>
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">@smoke</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@smoke</h4>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:04:07 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Without Login with to add to cart flow</a>
+<div class="">
+<span class="badge badge-default">Add to Cart feature.Without Login with to add to cart flow</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:04:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='13'>Without Login with to add to cart flow</a>
+<div class="">
+<span class="badge badge-default">Add to Cart feature.Without Login with to add to cart flow</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:05:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='24' id='25'>Login with correct credentails</a>
+<div class="">
+<span class="badge badge-default">SignIn page feature.Login with correct credentails</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:05:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='35' id='36'>Order page functionlity test when there is no order</a>
+<div class="">
+<span class="badge badge-default">Dashboard Page Feature.Order page functionlity test when there is no order</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:06:44 PM</td>
+<td>
+<a href="#" class="linked" test-id='45' id='46'>To show the Recommended product</a>
+<div class="">
+<span class="badge badge-default">Recommended Page Feature.To show the Recommended product</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:07:18 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='54'>search the product</a>
+<div class="">
+<span class="badge badge-default">Search page feature.search the product</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchElementException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:04:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='6'>When user click to clerance room option</a>
+<div class="">
+<span class="badge badge-default">Add to Cart feature.Without Login with to add to cart flow.When user click to clerance room option</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:08:08 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='59'>And user click to 3rd option</a>
+<div class="">
+<span class="badge badge-default">Search page feature.search the product.And user click to 3rd option</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
       </div>
     </div>
   </div>

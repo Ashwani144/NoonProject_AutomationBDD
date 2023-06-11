@@ -5,6 +5,7 @@ Given user has already logged in to application
 |email|password|
 |ashwanipandeycert@gmail.com|Noon@2121|
 
+@smoke
 Scenario: Order page functionlity test when there is no order
 Given user is on Home page
 When user click to MyAccount option
